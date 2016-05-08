@@ -1,0 +1,27 @@
+{{define "index"}}
+<html>
+    <head><title>All Books</title></head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+            {{range $key, $value := .}}
+            <tr>
+                <td>{{$value.Title}}</td>
+                <td>{{$value.Description}}</td>
+                <td>{{$value.Author}}</td>
+                <td>
+                    <a href="/books/add">Add</a> |
+                    <a href="/books/edit/{{$key}}">Edit </a> |
+                    <a href="/books/delete/{{$key}}">Delete</a>
+                </td>
+            </tr>
+            {{end}}
+        </table>
+    </body>
+</html>
+{{end}}

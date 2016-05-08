@@ -1,0 +1,19 @@
+{{define "edit"}}
+<html>
+    <head><title>Edit Book Details</title></head>
+    <body>
+        <form action="/books/update/{{.Id}}" method="post">
+            <p>Title</p>
+            <input type="text" value="{{.Book.Title}}" name="title">
+            <br>
+            <p>Description</p>
+            <textarea cols="50" rows="10" name="description">{{.Book.Description}}</textarea>
+            <br>
+            <p>Author</p>
+            <input type="text" value="{{.Book.Author}}" name="author">
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
+{{end}}
